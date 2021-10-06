@@ -58,6 +58,38 @@ public class Book {
 		this.language = lang;
 		this.numberOfPages = pages;
 	}
+	
+	public Book(Long id, String title, String desc, String lang, int pages) {
+		this.id = id;
+		this.title = title;
+		this.description = desc;
+		this.language = lang;
+		this.numberOfPages = pages;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 
 	public String getTitle() {
 		return title;

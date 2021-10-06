@@ -1,5 +1,7 @@
 package codingdojo.books.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,17 @@ public class BookController {
 	@Autowired 
 	BookService bookService;
 
+	@RequestMapping("/books")
+	public String index (Model model) {
+	
+		List<Book> allBooks = bookService.allBooks();
+	
+		model.addAttribute("books", allBooks);
+		
+		return "index.jsp";
+		
+	}
+	
 	@RequestMapping("/books/{id}")
 	public String show (
 						Model model,

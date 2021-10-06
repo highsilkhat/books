@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
+<title>Reading Books</title>
   <!-- Bootstrap -->
   <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,8 +21,76 @@
     crossorigin="anonymous">
 </head>
 <body>
-    <div class="container"> <!-- Beginning of Container -->
+    <div class="container">
+    
+    <h1>All Books</h1>
+    
+    <table class="table table-striped">
+    	<tr>
+	    	<th>
+	    	ID
+	    	</th>
+	    	
+	    	<th>
+	    	Title
+	    	</th>
+	    	
+	    	<th>
+	    	Description
+	    	</th>
+	    	
+	    	<th>
+	    	Language
+	    	</th>
+	    	
+	    	<th>
+	    	# of pages
+	    	</th>
+	    	
+    	</tr>
+    	
+    	<tbody>
+    	
+    	<c:forEach var="book" items="${ books }">
+    	<tr>
+    		<td>
+    		${ book.id }
+    		</td>
+    		
+    		<td>
+    		<a href="/books/${ book.id }">${ book.title }</a>
+    		</td>
+    		
+    		<td>
+    		
+    		${ book.description }
+    		
+    		</td>
+    		
+    		<td>
+    		${ book.language }
+    		</td>
+    		
+    		<td>
+    		${ book.numberOfPages }
+    		</td>
+    		
+    	
+    	
+    	</c:forEach>
+    	
+    	
+    	</tbody>
+    
+    
+    
+    
+    
+    
+    
+    </table>
+    
         
-    </div> <!-- End of Container -->
+    </div> 
 </body>
 </html>
