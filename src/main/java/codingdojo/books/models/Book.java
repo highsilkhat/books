@@ -26,19 +26,19 @@ public class Book {
 	private Long id;
 	
 	@NotNull
-	@Size(min =5, max =200)
+	@Size(min =5, max =200, message="Title must be at least 5 charachters.")
 	private String title;
 	
 	@NotNull
-	@Size(min = 5, max = 200)
+	@Size(min = 5, max = 200, message="Description must be at least 5 charachters.")
 	private String description;
 	
 	@NotNull
-	@Size(min = 3, max =40)
+	@Size(min = 3, max =40, message="Lanugage name must be at least 3 charachters.")
 	private String language;
 	
 	@NotNull
-	@Min(100)
+	@Min(value = 100, message= "Sorry, we would like preclude most of literature, including but not limited to poetry, novellas, short stories, and children's literature. The book must be at least 100 pages.")
 	private Integer numberOfPages;
 	
 	@Column(updatable=false)
@@ -52,19 +52,19 @@ public class Book {
 
 	}
 	
-	public Book(String title, String desc, String lang, int pages) {
+	public Book(String title, String desc, String lang, int numPages) {
 		this.title = title;
 		this.description = desc;
 		this.language = lang;
-		this.numberOfPages = pages;
+		this.numberOfPages = numPages;
 	}
 	
-	public Book(Long id, String title, String desc, String lang, int pages) {
+	public Book(Long id, String title, String desc, String lang, int numPages) {
 		this.id = id;
 		this.title = title;
 		this.description = desc;
 		this.language = lang;
-		this.numberOfPages = pages;
+		this.numberOfPages = numPages;
 	}
 
 	public Long getId() {

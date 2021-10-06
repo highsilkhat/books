@@ -47,6 +47,10 @@
 	    	# of pages
 	    	</th>
 	    	
+	    	<th>
+	    	Actions
+	    	</th>
+	    	
     	</tr>
     	
     	<tbody>
@@ -75,6 +79,17 @@
     		${ book.numberOfPages }
     		</td>
     		
+    		<td>
+    		<a href="/books/${ book.id }/edit">edit</a>
+    		
+    		<form action="/books/${book.id}" method="post">
+    		<input type="hidden" name="_method" value="delete">
+    		<input type="submit" class= "btn btn-danger" value="Delete">
+			</form>
+    		
+    		</td>
+    		
+    		
     	
     	
     	</c:forEach>
@@ -83,13 +98,9 @@
     	</tbody>
     
     
-    
-    
-    
-    
-    
     </table>
     
+    <a href="/books/new">Add Another Book</a>
         
     </div> 
 </body>
